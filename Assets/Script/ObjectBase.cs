@@ -12,10 +12,13 @@ public class ObjectBase :MonoBehaviour
     public GameObject lootObject;//掉落物品
 
     //HP的属性，当hp修改时自动判断死亡/hp更新逻辑
-    public float Hp { get => hp;
+    public float Hp
+    {
+        get => hp;
         set
         {
             hp = value;
+            //检测死亡
             if(hp<=0)
             {
                 hp= 0;
@@ -37,5 +40,10 @@ public class ObjectBase :MonoBehaviour
     protected virtual void Dead()
     {
 
+    }
+    //受伤
+    public virtual void Hurt(int damage)
+    {
+        Hp -= damage;
     }
 }

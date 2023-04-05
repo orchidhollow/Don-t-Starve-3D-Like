@@ -7,6 +7,7 @@ using UnityEngine.Scripting.APIUpdating;
 public class PlayerController : ObjectBase
 {
     public static PlayerController instance;
+    [SerializeField] CheckCollider checkCollider;
     [SerializeField] Animator animator;
     [SerializeField] CharacterController characterController;
 
@@ -37,6 +38,8 @@ public class PlayerController : ObjectBase
     private void Awake()
     {
         instance = this;
+        //³õÊ¼»¯ÉËº¦¼ì²âÆ÷
+        checkCollider.Init(this, 30);
     }
 
     private void Update()
@@ -100,7 +103,7 @@ public class PlayerController : ObjectBase
         //Ë¥¼õ¼¢¶öÖµ
         Hungry -= Time.deltaTime * 3;       
     }
-    protected override void OnHpUpdate()
+    protected override void OnHpUpdate()//½ÇÉ«µÄÑªÌõ¸üÐÂ
     {
         //¸üÐÂÑªÌõ
         hpImage.fillAmount = Hp / 100;
@@ -112,13 +115,14 @@ public class PlayerController : ObjectBase
         //²¥·ÅÒôÐ§
         PlayAudio(0);
         //¹¥»÷¼ì²â
+        checkCollider.StarHit();
     }
 
     private void StopHit()
     {
         //Í£Ö¹¹¥»÷¼ì²â
         isAttacking=false;
-        
+        checkCollider.StopHit();
     }
 
     #endregion
