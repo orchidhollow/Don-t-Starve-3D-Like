@@ -11,6 +11,8 @@ public class CheckCollider : MonoBehaviour
 
     //敌人标签
     [SerializeField] List<string> enemyTags= new List<string>();
+    //可拾取标签
+    [SerializeField] List<string> itemTags= new List<string>();
     public void Init(ObjectBase owner,int damage)
     {
         this.damage = damage;
@@ -43,6 +45,14 @@ public class CheckCollider : MonoBehaviour
                 //伤害
                 other.GetComponent<ObjectBase>().Hurt(damage);
             }
+            return;
+        }
+
+        //检测拾取
+        if(itemTags.Contains(other.tag))
+        {
+            owner.PlayAudio(1); //宿主播放音效
+            Destroy(other.gameObject);
         }
     }
 }

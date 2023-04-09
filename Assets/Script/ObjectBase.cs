@@ -28,7 +28,7 @@ public class ObjectBase :MonoBehaviour
         }
      }
 
-    protected void PlayAudio(int index)
+    public void PlayAudio(int index)
     {
         audioSource.PlayOneShot(audioClips[index]);//播放一次
     }
@@ -39,7 +39,12 @@ public class ObjectBase :MonoBehaviour
     //死亡
     protected virtual void Dead()
     {
-
+        if(lootObject!= null)
+        {
+            Instantiate(lootObject,
+                transform.position+new Vector3(Random.Range(-0.5f, 0.5f),Random.Range(1f,1.5f),Random.Range(-0.5f,0.5f)),
+                Quaternion.identity);
+        }
     }
     //受伤
     public virtual void Hurt(int damage)
