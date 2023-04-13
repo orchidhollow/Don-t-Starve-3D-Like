@@ -51,4 +51,10 @@ public class ObjectBase :MonoBehaviour
     {
         Hp -= damage;
     }
+
+    //Ìí¼ÓÎïÆ·
+    public virtual bool AddItem(ItemType itemType)
+    {
+        return false;
+    }
 }

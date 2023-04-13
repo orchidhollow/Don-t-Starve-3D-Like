@@ -16,6 +16,7 @@ public class PlayerController : ObjectBase
     Quaternion targetDirQuaternion;//四元数旋转量
 
     private bool isAttacking=false;//攻击状态
+    private bool isHurting=false;//受伤状态
     private float hungry = 100;
 
     public float Hungry { get => hungry;
@@ -45,7 +46,8 @@ public class PlayerController : ObjectBase
     private void Update()
     {
         UpdateHungry();
-        if (!isAttacking)
+        //即不再攻击中、也不在受伤中才能移动攻击
+        if (!isAttacking&& !isHurting)
         {
             Move();
             Attack();
@@ -109,6 +111,20 @@ public class PlayerController : ObjectBase
         hpImage.fillAmount = Hp / 100;
     }
 
+    public override void Hurt(int damage)
+    {
+        base.Hurt(damage);
+        animator.SetTrigger("Hurt");
+        PlayAudio(2);
+        isHurting=true;
+    }
+
+    public override bool AddItem(ItemType itemType)
+    {
+        //检测背包能不能放下
+        return UI_BagPanel.instance.AddItem(itemType);
+    }
+
     #region 动画事件
     private void StartHit()
     {
@@ -123,6 +139,11 @@ public class PlayerController : ObjectBase
         //停止攻击检测
         isAttacking=false;
         checkCollider.StopHit();
+    }
+
+    private void HurtOver()
+    {
+        isHurting = false;
     }
 
     #endregion
