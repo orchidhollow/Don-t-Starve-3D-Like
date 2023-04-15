@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;//事件系统
 
+//继承鼠标进入和鼠标退出的接口
 public class UI_BagPanelItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField]  Image bg;
-    [SerializeField]  Image iconIgm;
+    [SerializeField]  Image bg;//背景色
+    [SerializeField]  Image iconIgm;//图标
 
     public ItemDefine itemDefine;
 
@@ -30,12 +31,13 @@ public class UI_BagPanelItem : MonoBehaviour, IPointerEnterHandler, IPointerExit
         }
     }
 
-
+    //鼠标进入时调用
     public void OnPointerEnter(PointerEventData eventData)
     {
         IsSelect=true;
     }
 
+    //鼠标退出时调用
     public void OnPointerExit(PointerEventData eventData)
     {
         IsSelect=false;

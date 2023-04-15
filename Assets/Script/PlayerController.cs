@@ -85,7 +85,12 @@ public class PlayerController : ObjectBase
     {
         //检测攻击按键
         if(Input.GetMouseButton(0))
-        {            
+        {
+            //当前鼠标正在和UI交互
+            if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             //射线检测，从主摄像头向鼠标发出射线，带回信息，检测最大距离和检测层
             if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out RaycastHit hitInfo,10,LayerMask.GetMask("Ground")))
             {

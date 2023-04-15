@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  itemPrefab: {fileID: 4583646104366985754, guid: af68f45e213fada4fb59ebb5735c67e6, type: 3}
+  itemPrefab: {fileID: 8971546094131641460, guid: 7e18bb209a1ae2145b2dc07fa8ddf910, type: 3}
 --- !u!114 &38442542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefabs:
   - {fileID: 4583646104366985754, guid: af68f45e213fada4fb59ebb5735c67e6, type: 3}
-  - {fileID: 0}
+  - {fileID: 4583646104366985754, guid: af68f45e213fada4fb59ebb5735c67e6, type: 3}
   - {fileID: 4894915698292071277, guid: a704a01934878144696da9c7e4373370, type: 3}
   - {fileID: 4894915698292071277, guid: a704a01934878144696da9c7e4373370, type: 3}
   icons:

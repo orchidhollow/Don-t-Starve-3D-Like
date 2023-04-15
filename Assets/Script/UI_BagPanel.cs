@@ -13,14 +13,21 @@ public class UI_BagPanel : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        items =new UI_BagPanelItem[5];
         //先生成篝火
+        //Instantiate第1参数为克隆源对象，第2为生成后的父对象
+        //获取其身上的UI_BagPanelItem组件
         UI_BagPanelItem item = Instantiate(itemPrefab, transform).GetComponent<UI_BagPanelItem>();
         item.Init(ItemManager.Instance.GetItemDefine(ItemType.Campfire));
         items[0] = item;
-
+        //其余格子为空白
         for (int i = 1; i < 5; i++)
         {
-            item=Instantiate(itemPrefab,transform).GetComponent<UI_BagPanelItem>();
+            item = Instantiate(itemPrefab, transform).GetComponent<UI_BagPanelItem>();
             item.Init(null);
             items[i] = item;
         }
