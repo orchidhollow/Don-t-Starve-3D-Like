@@ -80,6 +80,8 @@ MonoBehaviour:
   - Pig
   itemTags:
   - Wood
+  - Meat
+  - CookedMeat
 --- !u!1 &2515262816809255928
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,6 +4505,7 @@ GameObject:
   - component: {fileID: 2574014269948522518}
   - component: {fileID: 2516450975490021670}
   - component: {fileID: 2516450975490021665}
+  - component: {fileID: 4401365624645142}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4680,14 +4683,30 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 46babae6601baff4db1ee64f07944fb5, type: 3}
   - {fileID: 8300000, guid: d43f891ae031d5f468abcdd2f5b45ab5, type: 3}
+  - {fileID: 8300000, guid: 912a1aebc2112c64dbccd5257ea24486, type: 3}
   lootObject: {fileID: 0}
   checkCollider: {fileID: 1928438503}
   animator: {fileID: 2574014269948522518}
   characterController: {fileID: 2516450975490021670}
   M_speed: 1.4
   R_speed: 10
+  isDarging: 0
   hpImage: {fileID: 0}
   hungryImage: {fileID: 0}
+--- !u!136 &4401365624645142
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515836666729230078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &2515840794479306056
 GameObject:
   m_ObjectHideFlags: 0

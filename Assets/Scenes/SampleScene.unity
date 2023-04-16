@@ -251,6 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 129407088}
   - component: {fileID: 129407087}
+  - component: {fileID: 129407089}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -295,6 +296,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &129407089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129407086}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f22a8b547df52409f9a947c27e80a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunLight: {fileID: 705507994}
+  dayTime: 10
+  dayToNightTime: 20
+  nightTime: 10
+  nightToDayTime: 20
+  timeStateImg: {fileID: 1109974498}
+  dayNumText: {fileID: 291963719}
+  dayStateSprites:
+  - {fileID: 21300000, guid: d7338fe0770c8da4a98c9f25e777d597, type: 3}
+  - {fileID: 21300000, guid: 808319d71a2746e47a3160904af14506, type: 3}
 --- !u!1 &291963716
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +690,7 @@ GameObject:
   - component: {fileID: 1035552996}
   m_Layer: 3
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

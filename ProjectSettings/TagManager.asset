@@ -8,6 +8,8 @@ TagManager:
   - Wood
   - Pig
   - Meat
+  - Ground
+  - Campfire
   layers:
   - Default
   - TransparentFX
